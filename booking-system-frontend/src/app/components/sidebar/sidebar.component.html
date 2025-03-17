@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+    <!-- Sidebar -->
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-toolbar color="primary">Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/booking">Booking</a>
+        <a mat-list-item routerLink="/inventory">Inventory</a>
+        <a mat-list-item routerLink="/upload">Upload Data</a>
+        <a mat-list-item routerLink="/cancel-booking">cancel Booking</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Main Content -->
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-button (click)="sidenav.toggle()">☰</button>
+        Booking System
+      </mat-toolbar>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

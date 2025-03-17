@@ -1,0 +1,37 @@
+<div class="booking-container">
+    <mat-card class="booking-card">
+      <mat-card-title>Book an Item</mat-card-title>
+  
+      <mat-card-content>
+        <form (ngSubmit)="submitBooking()">
+          
+          <!-- Member Selection -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Select Member</mat-label>
+            <mat-select [(ngModel)]="selectedMemberId" name="selectedMemberId" required>
+              <mat-option *ngFor="let member of members" [value]="member.id">
+                {{ member.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <!-- Inventory Selection -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Select Inventory</mat-label>
+            <mat-select [(ngModel)]="selectedInventoryId" name="selectedInventoryId" required>
+              <mat-option *ngFor="let item of inventory" [value]="item.id">
+                {{ item.title }} ({{ item.remaining_count }} available)
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <!-- Submit Button -->
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit">Book</button>
+          </div>
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

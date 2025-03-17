@@ -1,0 +1,28 @@
+<div class="upload-container">
+    <mat-card class="upload-card">
+      <mat-card-title class="title">Upload File</mat-card-title>
+      <mat-card-content>
+        
+        <!-- Dropdown to select file type -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Select File Type</mat-label>
+          <mat-select [(value)]="selectedType">
+            <mat-option value="members">Members</mat-option>
+            <mat-option value="inventory">Inventory</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- File Input (Placed Outside mat-form-field) -->
+        <div class="file-input-container">
+          <input type="file" (change)="onFileSelected($event)" accept=".csv">
+        </div>
+  
+      </mat-card-content>
+      
+      <mat-card-actions class="action-container">
+        <button mat-raised-button color="primary" (click)="uploadFile()">Upload</button>
+      </mat-card-actions>
+  
+    </mat-card>
+  </div>
+  

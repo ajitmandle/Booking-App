@@ -1,0 +1,13 @@
+Django>=4.2
+djangorestframework
+psycopg2-binary
+python-dotenv
+gunicorn
+django-cors-headers
+django-environ
+drf-yasg
+celery
+redis
+Pillow
+whitenoise
+pandas

@@ -1,0 +1,22 @@
+<mat-card class="cancel-card">
+    <mat-card-title>Cancel Booking</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="cancelForm" (ngSubmit)="cancelBooking()">
+        <!-- Booking Dropdown -->
+        <mat-form-field class="full-width">
+          <mat-label>Select Booking</mat-label>
+          <mat-select formControlName="booking_id">
+            <mat-option *ngFor="let booking of bookings" [value]="booking.id">
+              {{ booking.member_name }} - {{ booking.inventory_name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Submit Button -->
+        <button mat-raised-button color="warn" type="submit" [disabled]="cancelForm.invalid">
+          Cancel Booking
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
